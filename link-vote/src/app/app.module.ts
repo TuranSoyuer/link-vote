@@ -7,7 +7,10 @@ import { LinkListComponent } from './link-list/link-list.component';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +22,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppRoutingModule,
     MatButtonModule,
     MatCardModule,
+    MatIconModule,
     FlexLayoutModule
   ],
   providers: [],
