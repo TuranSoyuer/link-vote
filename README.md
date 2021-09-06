@@ -1,2 +1,2 @@
 # link-vote
-Simple Angular Project
+Simple Angular 12 Project
