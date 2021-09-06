@@ -1,0 +1,19 @@
+<div *ngFor="let link of links" fxLayout="row" fxLayoutGap="12px" [style.margin-top]="'12px'">
+  <mat-card>
+    <mat-card-content>
+      <h2>{{link.point}}</h2>
+      POINTS
+    </mat-card-content>
+  </mat-card>
+  <mat-card fxFlex="60">
+    <mat-card-title>{{link.name}}</mat-card-title>
+    <mat-card-subtitle>({{link.url}})</mat-card-subtitle>
+    <mat-card-actions>
+      <button mat-button>Up Vote</button>
+      <button mat-button>Down Vote</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+
+
