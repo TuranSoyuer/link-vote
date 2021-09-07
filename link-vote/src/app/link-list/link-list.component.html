@@ -1,27 +1,35 @@
-
-<div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="12px" [style.margin-top]="'12px'">
-    <button mat-raised-button class="mb-5" routerLink="/add">
-        <mat-icon>add</mat-icon>
-        Submit A Link
+<div class="mt-4 row">
+  <div class="col-2 offset-5">
+    <button mat-raised-button routerLink="/add">
+      <mat-icon>add</mat-icon>
+      Submit A Link
     </button>
+  </div>
 </div>
 
-<div *ngFor="let link of links" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="12px" [style.margin-top]="'12px'">
-  <mat-card fxFlex="10">
-    <mat-card-content class="text-center">
-      <h1>{{link.point}}</h1>
-      POINTS
-    </mat-card-content>
-  </mat-card>
-  <mat-card fxFlex="40">
-    <mat-card-title>{{link.name}}</mat-card-title>
-    <mat-card-subtitle style="margin-bottom: 0">({{link.url}})</mat-card-subtitle>
-    <mat-card-actions>
-      <button mat-button>Up Vote</button>
-      <button mat-button>Down Vote</button>
-    </mat-card-actions>
-  </mat-card>
+<div *ngFor="let link of links" class="mt-5 row">
+  <div class="offset-2 col-2">
+    <mat-card>
+      <mat-card-content class="text-center">
+        <h1>{{link.point}}</h1>
+        POINTS
+      </mat-card-content>
+    </mat-card>
+  </div>
 
+  <div class="col-6">
+    <div class="action-card card-hover">
+      <div (click)="deleteLink(link.name)" class="delete-icon">
+        <mat-icon>delete</mat-icon>
+      </div>
+      <mat-card>
+        <mat-card-title>{{link.name}}</mat-card-title>
+        <mat-card-subtitle style="margin-bottom: 0">({{link.url}})</mat-card-subtitle>
+        <mat-card-actions>
+          <button mat-button>Up Vote</button>
+          <button mat-button>Down Vote</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
 </div>
-
-

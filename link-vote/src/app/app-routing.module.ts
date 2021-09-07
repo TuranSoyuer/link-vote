@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { LinkListComponent } from './link-list/link-list.component';
-import { LinkAddComponent } from './link-add/link-add.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {LinkListComponent} from './link-list/link-list.component';
+import {LinkAddComponent} from './link-add/link-add.component';
 
 const routes: Routes = [
   {
@@ -11,6 +11,16 @@ const routes: Routes = [
   {
     path: 'add',
     component: LinkAddComponent
+  },
+  {
+    path: '',
+    redirectTo: 'list',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: 'list',
+    pathMatch: 'full'
   }
 ];
 
@@ -18,4 +28,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
