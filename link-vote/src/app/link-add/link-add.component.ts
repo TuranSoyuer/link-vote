@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {LinkService} from "../services/link.service";
-import {FormBuilder, Validators} from "@angular/forms";
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-link-add',
@@ -9,21 +9,29 @@ import {FormBuilder, Validators} from "@angular/forms";
 })
 export class LinkAddComponent implements OnInit {
   linkForm = this.formBuilder.group({
-    name: ['', Validators.required],
-    url: ['', Validators.required]
+    name: [''],
+    url: ['']
   });
 
-  constructor(private linkService: LinkService, private formBuilder: FormBuilder) {
+  constructor(private linkService: LinkService,
+              private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    // console.log('form data is ', this.linkForm.value);
-    this.linkService.addLink(this.linkForm.value.name, this.linkForm.value.url, 0);
+  isSubmitDisabled(): boolean {
+    if (this.linkForm.value.name.trim() === "" || this.linkForm.value.url.trim() === "") {
+      return true;
+    }
+    return false;
   }
 
+  onSubmit() {
+    if (this.linkForm.value.name.trim() !== "" && this.linkForm.value.url.trim() !== "") {
+      this.linkService.addLink(this.linkForm.value.name, this.linkForm.value.url, 0);
+    }
+  }
 }
 
 
