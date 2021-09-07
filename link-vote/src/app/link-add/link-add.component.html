@@ -1,0 +1,42 @@
+<div class="mt-4 row" routerLink="/list" style="cursor: pointer">
+  <div class="col-1 offset-3" style="width: 4.33333333%">
+    <mat-icon>keyboard_backspace</mat-icon>
+  </div>
+  <div class="col-8">
+    <h4 style="display: inline;">Return to List</h4>
+  </div>
+</div>
+
+<form (submit)="onSubmit()" [formGroup]="linkForm" class="form-container row mt-5">
+  <div class="row">
+    <div class="col offset-3">
+      <h1>Add New Link</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6 offset-3">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Link Name</mat-label>
+        <input formControlName="name" id="name" matInput="" placeholder="e.g. Alphabet">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6 offset-3">
+      <mat-form-field appearance="outline" fxFlex="50">
+        <mat-label>Link Url</mat-label>
+        <input formControlName="url" id="url" matInput="" placeholder="e.g. http://abc.xyz">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2 offset-7">
+      <button [disabled]="isSubmitDisabled()" color="primary" mat-raised-button style="width: 100%">
+        ADD
+      </button>
+    </div>
+  </div>
+</form>
