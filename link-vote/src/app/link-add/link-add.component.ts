@@ -30,6 +30,7 @@ export class LinkAddComponent implements OnInit {
   onSubmit() {
     if (this.linkForm.value.name.trim() !== "" && this.linkForm.value.url.trim() !== "") {
       this.linkService.addLink(this.linkForm.value.name, this.linkForm.value.url, 0);
+      this.linkForm.reset();
     }
   }
 }
