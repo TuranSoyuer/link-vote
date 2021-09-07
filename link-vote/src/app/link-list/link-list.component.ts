@@ -56,7 +56,6 @@ export class LinkListComponent implements OnInit, OnDestroy {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed: ' + result);
       this.linkService.deleteLink(result);
       this.getLinks();
     });
@@ -73,7 +72,6 @@ export class LinkListComponent implements OnInit, OnDestroy {
   }
 
   orderByChange(value: SortOption) {
-    console.log(value);
     this.linkService.changeSortOption(value);
     this.getLinks();
   }

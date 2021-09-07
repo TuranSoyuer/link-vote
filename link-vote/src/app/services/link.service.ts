@@ -75,7 +75,6 @@ export class LinkService {
   }
 
   changeSortOption(value: SortOption) {
-    console.log(value);
     this.sortOption.sortBy = value.sortBy;
     this.sortOption.desc = value.desc;
   }
